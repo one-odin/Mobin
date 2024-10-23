@@ -8,7 +8,7 @@ import { ToastContainer } from "react-toastify";
 
 const UploadUser = () => {
   const [step, setStep] = useState(1); // Keeps track of the current step
-  const [data, setData] = useState([]); // Holds data across steps
+  const [data, setData] = useState([]);
 
   return (
     <>
@@ -21,8 +21,6 @@ const UploadUser = () => {
 
       <div className="mt-3">
         <Breadcrumb step={step} />
-
-        
 
         {step === 1 && <Step1 setStep={setStep} setData={setData} />}
         {step === 2 && <Step2 data={data} setData={setData} setStep={setStep} />}
