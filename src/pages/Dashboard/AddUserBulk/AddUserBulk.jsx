@@ -14,7 +14,7 @@ const UploadUser = () => {
     <>
       <ToastContainer limit={3} />
       <div className="flex">
-        <img src={headIcon} />
+        <img src={headIcon} alt="head-icon" />
         <h1 className="text-blue-700 text-2xl font-bold leading-8 ms-2">افزودن کاربر جدید به سازمان "اسنپ فود"</h1>
       </div>
       <p className="text-blue-300 mt-5 mb-2 text-md">افزودن گروهی کاربران</p>
