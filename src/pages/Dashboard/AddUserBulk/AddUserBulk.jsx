@@ -6,7 +6,7 @@ import Step3 from "../../../components/templates/AddUser/Steps/Step3";
 import headIcon from "../../../assets/img/head-icon.svg";
 import { ToastContainer } from "react-toastify";
 
-const UploadUser = () => {
+const AddUserBulk = () => {
   const [step, setStep] = useState(1); // Keeps track of the current step
   const [data, setData] = useState([]);
 
@@ -30,4 +30,4 @@ const UploadUser = () => {
   );
 };
 
-export default UploadUser;
+export default AddUserBulk;
