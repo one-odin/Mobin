@@ -1,10 +1,10 @@
-import {toast} from "react-toastify";
+import { toast } from "react-toastify";
 import "../../node_modules/react-toastify/dist/ReactToastify.css";
 
 const showToastError = (message) => {
   toast.error(message, {
     position: "top-right",
-    autoClose: 2000,
+    autoClose: 4000,
     hideProgressBar: false,
     closeOnClick: true,
     pauseOnHover: true,
@@ -17,7 +17,7 @@ const showToastError = (message) => {
 const showToastSuccess = (message) => {
   toast.success(message, {
     position: "top-right",
-    autoClose: 2000,
+    autoClose: 3000,
     hideProgressBar: false,
     closeOnClick: true,
     pauseOnHover: true,
@@ -30,7 +30,7 @@ const showToastSuccess = (message) => {
 const showToastWarning = (message) => {
   toast.warn(message, {
     position: "top-right",
-    autoClose: 2000,
+    autoClose: 4000,
     hideProgressBar: false,
     closeOnClick: true,
     pauseOnHover: true,
@@ -41,4 +41,4 @@ const showToastWarning = (message) => {
   });
 };
 
-export {showToastError, showToastSuccess, showToastWarning};
+export { showToastError, showToastSuccess, showToastWarning };

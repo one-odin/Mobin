@@ -6,10 +6,10 @@ const DashboardPanel = () => {
   return (
     <>
       <div className="flex bg-gray-50 gap-10 py-14 px-20">
-        <div className="flex-auto w-1/4">
+        <div className="flex-auto w-1/5">
           <Sidebar />
         </div>
-        <div className="flex-auto w-3/4 bg-white min-h-screen rounded-2xl border-2 border-gray-200 p-12">
+        <div className="flex-auto w-4/5 bg-white h-[calc(100vh-7rem)] overflow-auto rounded-2xl border-2 border-gray-200 p-12">
           {/* all page render in this tag */}
           <Outlet />
         </div>

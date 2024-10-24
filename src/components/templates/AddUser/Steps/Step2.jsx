@@ -4,14 +4,21 @@ import Tooltip from "../../../modules/Tooltip/Tooltip";
 import Button from "../../../modules/Button/Button";
 import DownloadSampleFile from "../DownloadSampleFile/DownloadSampleFile";
 import { GoCheckCircle, GoTrash, GoXCircle } from "react-icons/go";
+import { showToastError } from "../../../../utils/ShowToast";
 
-const DataTable = ({ data, setData, setStep }) => {
+const Step2 = ({ data, setData, setStep }) => {
   const handleDeleteRow = (index) => {
     setData(data.filter((_, idx) => idx !== index));
   };
 
   const handleDeleteInvalidRows = () => {
     const validRows = data.filter((row) => ["name", "email", "mobile", "country", "volume"].every((field) => validateField(field, row[field]) === true));
+    if (validRows.length === 0) {
+      setTimeout(() => {
+        showToastError("همه اطلاعات نامعتبر است و موردی برای نمایش وجود ندارد. فایل اصلاح شده را بارگزاری نمایید");
+        setStep(1);
+      }, 1000);
+    }
     setData(validRows);
   };
 
@@ -74,8 +81,14 @@ const DataTable = ({ data, setData, setStep }) => {
         </div>
 
         <div className="flex mt-7 gap-3">
-          <Button variant="primary" size="medium" className={`flex-1 ${hasInvalidRows ? "opacity-50 cursor-not-allowed" : ""}`} disabled={hasInvalidRows} onClick={handleSubmit}>
-            {hasInvalidRows ? (
+          <Button
+            variant="primary"
+            size="medium"
+            className={`flex-1 ${hasInvalidRows || data.length == 0 ? "opacity-50 cursor-not-allowed" : ""}`}
+            disabled={hasInvalidRows || data.length == 0}
+            onClick={handleSubmit}
+          >
+            {hasInvalidRows || data.length == 0 ? (
               "افزودن کاربران به سازمان"
             ) : (
               <>
@@ -92,4 +105,4 @@ const DataTable = ({ data, setData, setStep }) => {
   );
 };
 
-export default DataTable;
+export default Step2;
